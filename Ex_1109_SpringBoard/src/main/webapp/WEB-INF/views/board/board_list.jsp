@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Insert  here</title>
 		<style>
 			a{text-decoration: none;}
 			table{border-collapse: "collapse;}
