@@ -1,0 +1,97 @@
+A:link {text-decoration:none; color:#666666}
+A:visited {text-decoration:none; color:#666666}
+A:active {text-decoration:none}
+A:hover {text-decoration:underline; color:#3399CC}
+body, table, tr, td{font-family:±¼¸², tahoma; font-size:9pt; color:#454545;line-height:150%}
+
+.toptext {
+	font-family: "±¼¸²", "µ¸¿ò", "Arial";
+	font-size: 9pt;
+	color: #454545;
+}
+a:link {
+	text-decoration: none;
+	color: #777777;
+	font-size: 9pt;
+
+
+}
+a:visited {
+	font-size: 9pt;
+	text-decoration: none;
+	color: #777777;
+
+}
+a:hover {
+	color: #6699CC;
+	text-decoration: none;
+}
+.contents {
+	font-family: "±¼¸²", "µ¸¿ò", "Arial";
+	font-size: 9pt;
+	line-height: 15pt;
+	color: #454545;
+}
+.thline {
+	text-decoration: line-through;
+	font-size: 9pt;
+}
+textarea {
+	font-size: 9pt;
+	line-height: 14pt;
+	color: #666666;
+	border: 1px solid #CCCCCC;
+}
+input {
+	font-size: 9pt;
+	line-height: 14pt;
+	border: 1px solid #CCCCCC;
+	color: #666666;
+}
+.infotext {
+	font-family: "±¼¸²", "µ¸¿ò";
+	font-size: 9pt;
+	line-height: 13pt;
+	color: #838383;
+}
+.loca {
+	font-family: "±¼¸²", "µ¸¿ò";
+	font-size: 9pt;
+	color: #939393;
+}.member {
+	font-family: "±¼¸²", "µ¸¿ò", "Arial";
+	font-size: 9pt;
+	color: #999999;
+}
+.num {
+	font-family: "µ¸¿ò", "Arial";
+	font-size: 9pt;
+	color: #454545;
+}
+.contentss {
+	font-family: "±¼¸²", "µ¸¿ò", "Arial";
+	font-size: 9pt;
+	line-height: 20pt;
+	color: #454545;
+}
+.location {
+	font-family: "µ¸¿ò", "±¼¸²";
+	font-size: 9pt;
+	color: #979797;
+}
+.admint1 {
+	font-family: "µ¸¿ò", "±¼¸²";
+	font-size: 11pt;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.course {
+	color: #8D8D8D;
+	font-family: "µ¸¿ò", "±¼¸²";
+	font-size: 9pt;
+}
+.stext {
+	font-family: "µ¸¿ò", "±¼¸²";
+	font-size: 8pt;
+	line-height: 12pt;
+}

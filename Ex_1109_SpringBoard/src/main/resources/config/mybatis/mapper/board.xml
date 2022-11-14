@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+<!-- mapper : DB에 쿼리문을 요청하고 결과를 돌려받는 속성파일  -->
+
+ <select id="board_list" resultType="board" parameterType="java.util.HashMap" >
+	 SELECT * 
+	FROM (SELECT rank()over(ORDER BY REF DESC,step) NO ,b.*FROM board b)
+	WHERE NO BETWEEN #{start} AND #{end}
+ </select>
+  
+  
+  <!-- 새글 작성하기  -->
+  <!-- insert ,update,delete는 resultType을 기술할수 없다 (반환형이 정수라는걸 이클립스가 알고있다 -->
+<insert id="board_insert" parameterType="board">
+	insert into board values(seq_board_idx.nextVal,
+											#{name},
+											#{subject},
+											#{content},
+											#{pwd},
+											#{ip},
+											sysdate,
+											0,
+											seq_board_idx.currVal,
+											0,
+											0,
+											0)
+</insert>
+
+	<!-- 게시글 한 건 상세 조회  -->
+<select id="board_one" resultType="board" parameterType="int">
+	select * from board where idx=#{idx}
+
+</select>
+<!-- 조회수 증가  -->
+<update id="board_readhit" parameterType="int">
+	update board set readhit = readhit + 1 where idx=#{idx}
+</update>
+
+<!-- 댓글추가를 위한 step + 1  -->
+<update id ="board_update_step" parameterType="board">
+	update board set step = step + 1 where ref = #{ref} and step > #{step}
+
+</update>
+
+<!-- 댓글 달기   -->
+<insert id="board_reply" parameterType="board">
+	insert into board values(
+		seq_board_idx.nextVal,
+		#{name},
+		#{subject},
+		#{content},
+		#{pwd},
+		#{ip},
+		sysdate,
+		0,
+		#{ref},
+		#{step},
+		#{depth},
+		0
+	)
+</insert>
+
+	<!--  게시글이 삭제(된 것 처럼 업데이트)  -->
+	<update id="del_update" parameterType="board"> 
+	update board set 
+			subject = #{subject}, 
+			name = #{name}, 
+			del_info = -1 
+			where idx = #{idx} 
+	</update>
+
+<!-- 전체 게시물 개수 조회 -->
+<select id ="board_count" resultType="int">
+	select count(*) from board
+</select>
+<!--게시글 수정하기   -->
+<update id="board_update" parameterType="board"> 
+	update board set 
+		subject = #{subject}, 
+		name = #{name}, 
+		content = #{content},
+		pwd = #{pwd},
+		ip = #{ip}
+		where idx = #{idx}
+		
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

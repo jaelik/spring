@@ -1,0 +1,44 @@
+1.
+
+2.계정설정 
+
+
+3.파일생성 
+
+
+4. 작업시점 저장 
+스냅샷 방식 
+1)스테이징 단계
+git add 파일명, 경로 
+git add . 변화가 있는 모든 파일 
+
+
+2) 커밋 commit 
+git commit -m"작업 내용 메모" 
+
+5. 히스토리 로그 확인 하기 
+git log 
+git log --oneline  ( 로그를 조금더 편하게 볼수있다)
+
+6. 히스토리 복구 
+git checkout 커밋 ID
+  
+git checkout -  ( 최근에 했던작업으로 넘어갑니다)
+
+7.브렌치(협업)
+
+git branch 브랜치명  (브랜치생성)
+
+git branch (생성된 브랜치 목록 확인)
+
+git checkout 브랜치명  (해당 브랜치로 이동)
+
+git branch -d 브랜치명 (해당 브랜치명 삭제)
+
+8.브랜치 병합
+git merge 브렌치1
+병합하고자 하는 브렌치로 우선 이동  -> git merge 브렌치1  (현재 브렌치에 브랜치1 소스를 병합)
+
+9.로컬저장소에서 >  github  (원격저장소)
+git remote origin add 원격저장소 경로 
+git push origin 원격 저장소 브렌치명 
